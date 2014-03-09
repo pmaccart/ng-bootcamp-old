@@ -33,6 +33,14 @@ module.exports = function (grunt) {
       }
     },
 
+    jade: {
+      build: {
+        files: { 
+          "app/views/myview.html":"app/views/myview.jade"
+        }
+      }
+    },
+
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
@@ -50,6 +58,10 @@ module.exports = function (grunt) {
       less: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
         tasks: ['less']
+      },
+      jade: {
+        files: ['<%= yeoman.app %>/views/{,*/}*.jade'],
+        tasks: ['jade']
       },
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
@@ -370,6 +382,7 @@ module.exports = function (grunt) {
     'clean:dist',
     'bower-install',
     'less',
+    'jade',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
