@@ -25,6 +25,15 @@ module.exports = function (grunt) {
       dist: 'dist'
     },
 
+    less: {
+      build: {
+        files: {
+          ".tmp/styles/app.css":"<%= yeoman.app %>/styles/app.less"
+        }
+      }
+    },
+
+
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       js: {
@@ -37,6 +46,10 @@ module.exports = function (grunt) {
       jsTest: {
         files: ['test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
+      },
+      less: {
+        files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
+        tasks: ['less']
       },
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
@@ -356,6 +369,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'bower-install',
+    'less',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
