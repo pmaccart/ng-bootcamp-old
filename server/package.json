@@ -1,7 +1,9 @@
 {
-	"name":"ng-bootcamp-server",
-	"version":"0.0.1",
-	"author":"pmaccart",
-	"dependencies":{},
-	"devDependencies":{}
+  "name": "ng-bootcamp-server",
+  "version": "0.0.1",
+  "author": "pmaccart",
+  "dependencies": {
+    "express": "^3.5.0"
+  },
+  "devDependencies": {}
 }
